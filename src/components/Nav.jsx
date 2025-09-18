@@ -1,11 +1,13 @@
 import React from "react";
 
-const Nav = ({ register, login, logout, user }) => {
+const Nav = ({ register, login, logout, user, loading }) => {
   return (
     <nav>
       <div className="nav__container">
+        {loading ? 'Loading, Please Wait...' :
         <div className="nav__options">
-          {user ? (
+          
+          {user.email ? (
             <button onClick={logout} className="btn logout__btn">
               {user.email[0].toUpperCase()}
             </button>
@@ -20,6 +22,7 @@ const Nav = ({ register, login, logout, user }) => {
             </>
           )}
         </div>
+        }
       </div>
     </nav>
   );

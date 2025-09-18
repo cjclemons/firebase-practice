@@ -23,7 +23,7 @@ function App() {
         if (user) {
           setUser(user);
         }
-      }, 300);
+      }, 1000);
     });
   }, []);
 
@@ -56,7 +56,7 @@ function App() {
 
   return <div className="App">
     <Router>
-      <Nav register={register} login={login} logout={logout} user={user}/>
+      <Nav register={register} login={login} logout={logout} user={user} loading={loading}/>
     </Router>
   </div>;
 }
