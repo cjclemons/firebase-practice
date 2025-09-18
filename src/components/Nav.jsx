@@ -1,59 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import { auth } from "../firebase/init";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-} from "firebase/auth";
+import React from "react";
 
-
-
-const Nav = () => {
-
-
-    const [user, setUser] = useState({});
-      const [loading, setLoading] = useState(true);
-    
-      useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-          setTimeout(() => {
-            setLoading(false);
-            console.log(user);
-            if (user) {
-              setUser(user);
-            }
-          }, 300);
-        });
-      }, []);
-    
-      function register() {
-        console.log("register");
-        createUserWithEmailAndPassword(auth, "email@email.com", "test123")
-          .then((user) => {
-            console.log(user);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    
-      function login() {
-        signInWithEmailAndPassword(auth, "email@email.com", "test123")
-          .then(({ user }) => {
-            console.log(user);
-            setUser(user);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    
-      function logout() {
-        signOut(auth);
-        setUser({});
-      }
-
+const Nav = (register, login, logout) => {
   return (
     <nav>
       <div className="nav__container">
