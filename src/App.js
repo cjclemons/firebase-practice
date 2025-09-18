@@ -57,6 +57,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        
         <Nav register={register} login={login} logout={logout} />
       </div>
     </Router>

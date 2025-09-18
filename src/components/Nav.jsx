@@ -1,6 +1,6 @@
 import React from "react";
 
-const Nav = (register, login, logout) => {
+const Nav = ({ register, login, logout }) => {
   return (
     <nav>
       <div className="nav__container">
@@ -20,7 +20,4 @@ const Nav = (register, login, logout) => {
     </nav>
   );
 };
-
-
-
 export default Nav;
