@@ -54,14 +54,11 @@ function App() {
     setUser({});
   }
 
-  return (
+  return <div className="App">
     <Router>
-      <div className="App">
-        
-        <Nav register={register} login={login} logout={logout} />
-      </div>
+      <Nav register={register} login={login} logout={logout} user={user}/>
     </Router>
-  );
+  </div>;
 }
 
 export default App;
